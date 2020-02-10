@@ -28,8 +28,20 @@ body {
 	color:white;
 	text-align:right;
 } */
-.navbar > div{
+div.container-fluid.bg-dark.fixed-top.navbar > div{
 	width:100%;
+	flex-wrap: nowrap !important;
+}
+div.container-fluid.bg-dark.fixed-top.navbar > div > div{
+	display:flex;
+	align-items: center;
+}
+div.container-fluid.bg-dark.fixed-top.navbar > div > div{
+	display:flex;
+	align-items: center;
+}
+label {
+	margin-bottom:0 !important;
 }
 .topbar {
     width: 100%;
@@ -91,14 +103,8 @@ body {
 	visibility: hidden;
 }
 #triggerphonenav:checked ~ .topbar {
-	/*   animation-name: sidebarexpand;
-	animation-duration: 2s;
-	animation-fill-mode: forwards; */
+
 	transform: translate(0%, 0px);
-}
-@keyframes sidebarexpand {
-  from {transform: translate(-100%, 0px);}
-  to {transform: translate(0%, 0px);}
 }
 .sidebar .nav-item a{
 color:#484848;
