@@ -63,6 +63,7 @@ label {
 
 #home table {
  margin:0;
+ width:100%;
 }
 .table thead {
 	background-color:#046fa6;
