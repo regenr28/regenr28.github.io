@@ -8,33 +8,21 @@ body {
 .navbar {
 	height:56px;
 }
+.navbar .col-lg-12{
+	    justify-content: flex-end;
+}
 .navbar-collapse {
 	background-color: rgb(52, 58, 64);
 	padding:20px;
-}
-#navbarTogglerDemo03 {
-	display:none !important;
-}
-#navbarTogglerDemo03.show {
-	display:block !important;
 }
 .navbar div div svg{
 	font-size:30px;
 	padding:5px;
 	cursor:pointer;
 }
-/* .signout {
-	font-size:30px;
-	color:white;
-	text-align:right;
-} */
 div.container-fluid.bg-dark.fixed-top.navbar > div{
 	width:100%;
 	flex-wrap: nowrap !important;
-}
-div.container-fluid.bg-dark.fixed-top.navbar > div > div{
-	display:flex;
-	align-items: center;
 }
 div.container-fluid.bg-dark.fixed-top.navbar > div > div{
 	display:flex;
@@ -47,7 +35,7 @@ label {
     width: 100%;
     position: absolute;
     right: 0;
-    background-color: rgba(52, 58, 64, 0.96);
+    background-color: rgba(52, 58, 64, 0.95);
     top: 0;
 	height:100vh;
 	transform: translate(-100%, 0px);
@@ -106,17 +94,23 @@ label {
 
 	transform: translate(0%, 0px);
 }
-.sidebar .nav-item a{
+.sidebar .nav-item a, .topbar .nav-item a{
 color:#484848;
+width:100%;
 }
-.sidebar .nav-item svg{
+.sidebar .nav-item svg, .topbar .nav-item svg{
 color:#046fa6;
+
 }
-.sidebar .nav-item:nth-child(-n+2):hover{
+.sidebar .nav-item:nth-child(-n+2):hover, .topbar .nav-item:nth-child(-n+2):hover{
 	border-left: 4px solid #ddd;
 	background-color: #ddd;
 }
-.sidebar .nav-item.active {
+.topbar .nav-item {
+	background-color:white;
+	border-left: 4px solid #fff;
+}
+.sidebar .nav-item.active, .topbar .nav-item.active {
 	border-left: 4px solid #046fa6;
     background-color: #eeeeee;
 }
