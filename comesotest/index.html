@@ -11,7 +11,7 @@
     <title>Hello, Ecomo!</title>
   </head>
   <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="row">
 		<div class="col-6">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,10 +30,44 @@
 		  </div>
 		</div>
 		<div class="col-6 signout"><i class="fas fa-sign-out-alt"></i></div>
-	</div>
-  
+	</div></nav> -->
 
-</nav>
+<div class="container-fluid bg-dark fixed-top navbar">
+	<div class="row">
+		<div class="col-6 col-lg-6 text-light"><label for="triggerphonenav"><i class="fas fa-bars border"></i></label></div>
+		<div class="col-6 col-lg-6 text-right text-light"><i class="fas fa-sign-out-alt"></i></div>
+		<input type="checkbox" name="triggerphonenav" id="triggerphonenav">
+		<ul class="nav flex-column topbar">
+		    <li class="nav-item active">
+		      <a class="nav-link" data-toggle="tab" href="#home" role="tab"><i class="fas fa-home"></i> Dashboard</a>
+		    </li>
+		    <li class="nav-item">
+		      <a class="nav-link" data-toggle="tab" href="#feedback" role="tab"><i class="fas fa-envelope"></i> Feedback</a>
+		    </li>
+		     <li class="nav-item">
+		    </li>
+		    <li class="nav-item">
+		    </li>
+		    <li class="nav-item">
+		    </li>
+		    <li class="nav-item">
+		    </li>
+		    <li class="nav-item">
+		    </li>
+		    <li class="nav-item">
+		    </li>
+		    <li class="nav-item">
+		    </li>
+		    <li class="nav-item">
+		    </li>
+		    <li class="nav-item">
+		    </li>
+		    <li class="nav-item">
+		    </li>
+		</ul>
+	</div>
+	
+</div>
 
 <div class="container-fluid main-wrapper">
   <div class="row dashboard-row">
@@ -150,8 +184,6 @@
 		  $(".navbar-nav .nav-item a").tab('show');
 		});
 
-		
-
 		$('#nonecontact').change(function(){
 		    if ($(this).is(':checked') == true){
 		        $('#tel, #cel').prop('disabled', true);
@@ -159,6 +191,11 @@
 		         $('#tel, #cel').prop('disabled', false);
 		    }
 		});
+
+		$(".topbar").on("click",function(){
+
+			$("#triggerphonenav").prop("checked", false);
+		})
 	</script>
   </body>
 </html>
