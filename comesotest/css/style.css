@@ -18,18 +18,35 @@ body {
 #navbarTogglerDemo03.show {
 	display:block !important;
 }
-
-.signout {
+.navbar div div svg{
+	font-size:30px;
+	padding:5px;
+	cursor:pointer;
+}
+/* .signout {
 	font-size:30px;
 	color:white;
 	text-align:right;
-}
+} */
 .navbar > div{
 	width:100%;
 }
-
+.topbar {
+    width: 100%;
+    position: absolute;
+    right: 0;
+    background-color: rgba(52, 58, 64, 0.96);
+    top: 0;
+	height:100vh;
+	transform: translate(-100%, 0px);
+	transition: all 0.3s ease-in-out;
+	padding-top: 56px;
+}
 .dashboard-row {
 	height:100%;
+}
+.topbar .nav-item:nth-last-child(-n+10) {
+	display:none;
 }
 .sidebar {
 	box-shadow:0 0 10px 0 #c7c7c7;
@@ -57,7 +74,7 @@ body {
 .sidebar ul{
 	height:100%;
 }
-.sidebar .nav-item {
+.sidebar .nav-item, .topbar .nav-item {
 	border-left: 4px solid white;
 	padding: 10px 0;
 	color:#dedede;
@@ -65,6 +82,23 @@ body {
 	border-bottom: 1px solid #dadada;
 	display:flex;
 	align-items: center;
+}
+.topbar .nav-item {
+	border-left: 0;
+	border-bottom: 1px solid rgba(193, 193, 193, 0.18);
+}
+#triggerphonenav {
+	visibility: hidden;
+}
+#triggerphonenav:checked ~ .topbar {
+	/*   animation-name: sidebarexpand;
+	animation-duration: 2s;
+	animation-fill-mode: forwards; */
+	transform: translate(0%, 0px);
+}
+@keyframes sidebarexpand {
+  from {transform: translate(-100%, 0px);}
+  to {transform: translate(0%, 0px);}
 }
 .sidebar .nav-item a{
 color:#484848;
