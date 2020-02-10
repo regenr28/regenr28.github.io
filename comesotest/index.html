@@ -11,31 +11,11 @@
     <title>Hello, Ecomo!</title>
   </head>
   <body>
-<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-	<div class="row">
-		<div class="col-6">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse " id="navbarTogglerDemo03">
-		    <ul class="nav navbar-nav mr-auto mt-2 mt-lg-0">
-		     <li class="nav-item active">
-		      <a class="nav-link" data-toggle="tab" href="#home" role="tab"><i class="fas fa-home"></i> Dashboard</a>
-		    </li>
-		    <li class="nav-item">
-		      <a class="nav-link" data-toggle="tab" href="#feedback" role="tab"><i class="fas fa-envelope"></i> Feedback</a>
-		    </li>
-		     
-		    </ul>
-		  </div>
-		</div>
-		<div class="col-6 signout"><i class="fas fa-sign-out-alt"></i></div>
-	</div></nav> -->
 
 <div class="container-fluid bg-dark fixed-top navbar">
 	<div class="row">
-		<div class="col-6 col-lg-6 text-light"><label for="triggerphonenav"><i class="fas fa-bars border"></i></label></div>
-		<div class="col-6 col-lg-6 text-right text-light"><i class="fas fa-sign-out-alt"></i></div>
+		<div class="d-lg-none col-6 text-light"><label for="triggerphonenav"><i class="fas fa-bars border"></i></label></div>
+		<div class="col-6 col-lg-12 text-right text-light"><i class="fas fa-sign-out-alt"></i></div>
 		<input type="checkbox" name="triggerphonenav" id="triggerphonenav">
 		<ul class="nav flex-column topbar">
 		    <li class="nav-item active">
@@ -66,7 +46,6 @@
 		    </li>
 		</ul>
 	</div>
-	
 </div>
 
 <div class="container-fluid main-wrapper">
@@ -175,13 +154,19 @@
     <script>
     	$('.sidebar .nav-item a').on('click', function (e) {
 		  e.preventDefault();
+		  let linkhref = $(this).attr('href');
 		  $(this).parent().addClass('active').siblings().removeClass('active');
 		  $(this).tab('show');
+		  $(".topbar .nav-item a[href='"+linkhref+"']").parent().addClass('active').siblings().removeClass('active');
+
 		});
-    	$('.navbar-nav .nav-item a').on('click', function (e) {
-		  e.preventDefault();
-		  $(".navbar-nav .nav-item a:nth-child(1)").parent().addClass('active').siblings().removeClass('active');
-		  $(".navbar-nav .nav-item a").tab('show');
+
+    	$('.topbar .nav-item a').on('click', function (e) {
+		   e.preventDefault();
+		   let linkhref = $(this).attr('href');
+		   $(this).parent().addClass('active').siblings().removeClass('active');
+		   $(this).tab('show');
+		  $(".sidebar .nav-item a[href='"+linkhref+"']").parent().addClass('active').siblings().removeClass('active');
 		});
 
 		$('#nonecontact').change(function(){
@@ -193,7 +178,6 @@
 		});
 
 		$(".topbar").on("click",function(){
-
 			$("#triggerphonenav").prop("checked", false);
 		})
 	</script>
